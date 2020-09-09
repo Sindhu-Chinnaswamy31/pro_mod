@@ -1,7 +1,7 @@
 from django.db import models
 from django.core import validators
 from django.core.exceptions import ValidationError
-# Create your models here.
+# Create your models here. 
 
 class Topic(models.Model):
     topic_name=models.CharField(max_length=30,unique=True,blank=False,validators=[validators.MaxLengthValidator(10)])
