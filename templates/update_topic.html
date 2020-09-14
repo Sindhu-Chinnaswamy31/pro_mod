@@ -6,11 +6,10 @@
     <title>Update Topic</title>
 </head>
 <body>
-    <h2>Fill The Form To Update Topic To The Table</h2>
     <form method="POST">
         {% csrf_token %}
         <input type="text" name="topic_name" id="topic_name" value="{{topic.topic_name}}">
-        <input type="submit" value="Update Topic">
+        <input type="submit" value="Update">
     </form>
 </body>
 </html>
