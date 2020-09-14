@@ -53,3 +53,9 @@ def search_webpage(request):
         return redirect('display_webpage',webid=id)
     return render(request,'search_webpage.html')
     
+def update_topic(request,id):
+    if request.method=="POST":
+        new_tname=request.POST.get("topic_name")
+        t=Topic.objects.filter(id=id).update(topic_name=new_tname)
+    t=Topic.objects.filter(id=id).update()
+    return render(request,"update_topic.html",{"topic":t})

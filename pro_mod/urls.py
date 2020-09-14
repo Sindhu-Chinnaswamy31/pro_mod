@@ -26,4 +26,5 @@ urlpatterns = [
     path('display_web/',views.display_webpages,name="display_webpages"),
     path('display_web/<webid>',views.display_webpage,name="display_webpage"),
     path('search_web/',views.search_webpage,name="search_web"),
+    path('update/topic/<id>',views.update_topic,name="update_topic"),
 ]
