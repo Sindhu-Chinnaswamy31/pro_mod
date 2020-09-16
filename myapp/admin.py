@@ -6,14 +6,14 @@ class TopicAdminView(admin.ModelAdmin):
     search_fields=('topic_name',)
 class WebpageAdminView(admin.ModelAdmin):
     list_display=('topic','name','url')
-    search_fields=('name',)
+    search_fields=('topic','name')
     list_editable=('name',)
     list_filter=('topic',)
 class AccessDetailsAdminView(admin.ModelAdmin):
     list_display=('webpage','datetime')
-    search_fields=('datetime',)
+    search_fields=('webpage','datetime')
 admin.site.register(models.Topic,TopicAdminView)
 admin.site.register(models.Webpage,WebpageAdminView)
 admin.site.register(models.AccessDetails,AccessDetailsAdminView)
-
+admin.site.register(models.ProfilePic)
 

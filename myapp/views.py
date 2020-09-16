@@ -77,3 +77,32 @@ def delete_topic(request,id):
         t.delete()
         return HttpResponse("<h3>deletion is duccessful</h3>")
     return HttpResponse("<h3>Record not found</h3>")
+
+def disp_img(request,id):
+    profile=ProfilePic.objects.get(id=id)
+    return render(request,"disp_image.html",{'profile':profile})
+
+def disp_img(request,id):
+    profile=ProfilePic.objects.get(id=id)
+    return render(request,"disp_image.html",{'profile':profile})
+
+from myapp.forms import *
+def topic_modelform(request):
+    if request.method=="POST":
+        form=TopicForm(request.POST)
+        if form.is_valid():
+            form.save()
+        else:
+            return render(request,'modelform.html',{'form':form})
+    form=TopicForm()
+    return render(request,'modelform.html',{'form':form})
+def webform(request):
+    if request.method=="POST":
+        form=WebpageForm(request.POST)
+        if form.is_valid():
+            form.save()
+        else:
+            return render(request,'modelform.html',{'form':form})
+    form=WebpageForm()
+    return render(request,'modelform.html',{'form':form})
+
