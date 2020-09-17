@@ -11,3 +11,11 @@ class WebpageForm(forms.ModelForm):
         model=Webpage
         fields=('topic','name','url')#'__all__'
         #exclude=('url',)
+
+from django.contrib.auth.models import User
+class UserModelForm(forms.ModelForm):
+    password=forms.CharField(max_length=30,widget=forms.PasswordInput)
+    class Meta:
+        model = User 
+        fields = ("username","password","email","is_staff","is_superuser")
+
